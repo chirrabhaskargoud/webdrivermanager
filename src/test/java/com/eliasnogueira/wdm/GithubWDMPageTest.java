@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
+import org.openqa.selenium.remote.DesiredCapabilities;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GithubWDMPageTest {
@@ -18,14 +18,21 @@ class GithubWDMPageTest {
 
     @BeforeAll
     static void webdrivermanagerSetup() {
-        WebDriverManager.chromedriver().setup();
-
-        ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
-
-        driver = new ChromeDriver(options);
-
+      try {
+        WebDriverManager.chromedriver().setup();        
+        DesiredCapabilities capability = new DesiredCapabilities();
+        ChromeOptions chromeOpts = new ChromeOptions();
+        //chromeOpts.addArguments("--dns-prefetch-disable");
+        capability=DesiredCapabilities.chrome();
+        capability.setBrowserName("chrome");
+        capability.setCapability(ChromeOptions.CAPABILITY, chromeOpts);
+        chromeOpts.setHeadless(true);
+        driver = new ChromeDriver(chromeOpts);
         driver.get(URL);
+        System.out.println("************************Execution completed*************************************");
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
 
     @AfterAll
