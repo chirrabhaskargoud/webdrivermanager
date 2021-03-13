@@ -1,4 +1,4 @@
-image: elgalu/selenium
+image: markhobson/maven-chrome:jdk-8
 
 stages:
   - build
