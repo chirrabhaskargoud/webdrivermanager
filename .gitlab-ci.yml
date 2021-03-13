@@ -26,3 +26,4 @@ test:
     reports:
       junit:
         - target/surefire-reports/TEST-*.xml
+        
