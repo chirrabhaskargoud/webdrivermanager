@@ -1,8 +1,7 @@
 image: markhobson/maven-chrome:jdk-8
 
 stages:
-  - build
-  - test
+  - prepare 
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
@@ -12,18 +11,18 @@ cache:
     - .m2/repository/
     - target/
 
-build:
-  stage: build
-  script:
+prepare:
+  stage: prepare
+  script: 
+    - wipCommits=`git log -1 --pretty=%B`; if [$wipCommits="invoice"]; then echo "WIP commits detected; aborting."; exit 1; fi
+    - echo "success"	
     - mvn compile
-
-test:
-  stage: test
-  script:
     - mvn test -Dtest=com.eliasnogueira.wdm.GithubWDMPageTest
-  artifacts:
-    when: always
-    reports:
-      junit:
-        - target/surefire-reports/TEST-*.xml
-        
+
+prepare:
+  stage: prepare
+  script: 
+    - wipCommits=`git log -1 --pretty=%B`; if [$wipCommits="ippayments"]; then echo "WIP commits detected; aborting."; exit 1; fi
+    - echo "success"	
+    - mvn compile
+    - mvn test -Dtest=com.eliasnogueira.wdm.GithubWDMPageTest2

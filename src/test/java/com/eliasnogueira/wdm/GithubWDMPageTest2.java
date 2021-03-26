@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class GithubWDMPageTest {
+class GithubWDMPageTest2 {
 
     private static WebDriver driver;
     private static final String URL = "https://github.com/bonigarcia/webdrivermanager";
@@ -29,7 +29,7 @@ class GithubWDMPageTest {
         chromeOpts.setHeadless(true);
         driver = new ChromeDriver(chromeOpts);
         driver.get(URL);
-        System.out.println("************************ GithubWDMPageTest Execution completed Successfully *************************************");
+        System.out.println("************************GithubWDMPageTest2 Execution completed Successfully *************************************");
       } catch (Exception e) {
         e.printStackTrace();
       }
