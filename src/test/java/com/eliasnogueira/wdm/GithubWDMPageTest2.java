@@ -1,22 +1,24 @@
 package com.eliasnogueira.wdm;
 
+import static org.testng.AssertJUnit.assertEquals;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import com.eliasnogueira.wdm.po.GitHubPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class GithubWDMPageTest2 {
 
     private static WebDriver driver;
     private static final String URL = "https://github.com/bonigarcia/webdrivermanager";
 
-    @BeforeAll
+    @BeforeMethod
     static void webdrivermanagerSetup() {
       try {
         WebDriverManager.chromedriver().setup();        
@@ -35,7 +37,7 @@ class GithubWDMPageTest2 {
       }
     }
 
-    @AfterAll
+    @AfterMethod
     static void quitBrowser() {
         driver.quit();
     }
