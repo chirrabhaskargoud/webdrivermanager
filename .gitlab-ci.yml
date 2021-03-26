@@ -14,7 +14,7 @@ cache:
 prepare1:
   stage: prepare
   script: 
-    - wipCommits=`git log -1 --pretty=%B`; if [$wipCommits="invoice"]; then echo "success invoice" else echo "WIP commits detected; aborting."; exit 1; fi
+    - wipCommits=`git log -1 --pretty=%B`; if [$wipCommits="invoice"]; then echo "success invoice"; else exit 1; fi
     - echo "success "	
     - mvn compile
     - mvn test -Dtest=com.eliasnogueira.wdm.GithubWDMPageTest
@@ -22,7 +22,7 @@ prepare1:
 prepare2:
   stage: prepare
   script: 
-    - wipCommits=`git log -1 --pretty=%B`; if [$wipCommits="ippayments"]; then echo "WIP commits detected; aborting."; exit 1; fi
+    - wipCommits=`git log -1 --pretty=%B`; if [$wipCommits="ippayments"];  then echo "success ippayments" else echo "WIP commits detected; aborting."; exit 1; fi
     - echo "success"	
     - mvn compile
     - mvn test -Dtest=com.eliasnogueira.wdm.GithubWDMPageTest2
