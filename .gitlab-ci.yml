@@ -11,7 +11,7 @@ cache:
     - .m2/repository/
     - target/
 
-prepare:
+prepare1:
   stage: prepare
   script: 
     - wipCommits=`git log -1 --pretty=%B`; if [$wipCommits="invoice"]; then echo "WIP commits detected; aborting."; exit 1; fi
@@ -19,7 +19,7 @@ prepare:
     - mvn compile
     - mvn test -Dtest=com.eliasnogueira.wdm.GithubWDMPageTest
 
-prepare:
+prepare2:
   stage: prepare
   script: 
     - wipCommits=`git log -1 --pretty=%B`; if [$wipCommits="ippayments"]; then echo "WIP commits detected; aborting."; exit 1; fi
