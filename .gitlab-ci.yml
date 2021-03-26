@@ -2,6 +2,7 @@ image: markhobson/maven-chrome:jdk-8
 
 stages:
   - prepare 
+  - prepare2
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
@@ -20,9 +21,9 @@ prepare1:
     - mvn test -Dtest=com.eliasnogueira.wdm.GithubWDMPageTest
 
 prepare2:
-  stage: prepare
+  stage: prepare2
   script: 
-    - wipCommits='git log -1 --pretty=%B'; if [[]$wipCommits=="ippayments"]];  then echo "success ippayments" else echo "WIP commits detected; aborting."; exit 1; fi
+    - wipCommits='git log -1 --pretty=%B'; if [$wipCommits=="ippayments"]];  then echo "success ippayments" else echo "WIP commits detected; aborting."; exit 1; fi
     - echo "success"	
     - mvn compile
     - mvn test -Dtest=com.eliasnogueira.wdm.GithubWDMPageTest2
