@@ -29,7 +29,7 @@ class GithubWDMPageTest {
         chromeOpts.setHeadless(true);
         driver = new ChromeDriver(chromeOpts);
         driver.get(URL);
-        System.out.println("************************Execution completed Successfully*************************************");
+        System.out.println("************************Execution completed Successfully *************************************");
       } catch (Exception e) {
         e.printStackTrace();
       }
