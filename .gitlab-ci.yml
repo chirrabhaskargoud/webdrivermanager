@@ -22,4 +22,4 @@ prepare1:
   script: 
     - wipCommits=`git log -1 --pretty=%B`;module="invoice"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.GithubWDMPageTest; fi	
     - wipCommits=`git log -1 --pretty=%B`;module="ippayments"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.GithubWDMPageTest2; fi
-    - echo "Success"
+    - echo "Successfully executed"
