@@ -4,7 +4,6 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="com.eliasnogueira.wdm.GithubWDMPageTest2"/>
-      <class name="com.eliasnogueira.wdm.GithubWDMPageTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

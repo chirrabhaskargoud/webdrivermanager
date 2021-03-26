@@ -20,6 +20,6 @@ build:
 prepare1:
   stage: prepare
   script: 
-    - wipCommits=`git log -1 --pretty=%B`;module="invoice"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.GithubWDMPageTest; fi	
-    - wipCommits=`git log -1 --pretty=%B`;module="ippayments"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.GithubWDMPageTest2; fi
+    - wipCommits=`git log -1 --pretty=%B`;module="invoice"; if [[ $wipCommits == $module ]]; then mvn clean test -Dsurefire.suiteXmlFiles=GithubWDMPageTest.xml; fi	
+    - wipCommits=`git log -1 --pretty=%B`;module="ippayments"; if [[ $wipCommits == $module ]]; then mvn clean test -Dsurefire.suiteXmlFiles=GithubWDMPageTest2.xml; fi
     - echo "Successfully executed"
