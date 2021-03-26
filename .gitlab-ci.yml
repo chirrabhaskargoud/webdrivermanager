@@ -19,6 +19,7 @@ build:
   script:
     - apt-get update
     - apt install docker.io -y
+    - docker run ubuntu
     - docker pull markhobson/maven-chrome:jdk-8
     - docker pull elgalu/selenium
     - docker pull dosel/zalenium
