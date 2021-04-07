@@ -1,25 +1,25 @@
 image: markhobson/maven-chrome:jdk-8
 
 stages:
-  - build 
-  - test 
+  - build1
+  - test1
 
 variables:
-  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+ MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
 
 cache:
-  paths:
-    - .m2/repository/
-    - target/
+  paths:
+   - .m2/repository/
+   - target/
 
 build:
-  stage: build
-  script:
-    - mvn compile
+  stage: build
+  script:
+   - mvn compile
 
 test:
-  stage: test
-  script: 
-    - wipCommits=`git log -1 --pretty=%B`;module="invoice"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.invoice; fi	
-    - wipCommits=`git log -1 --pretty=%B`;module="ippayments"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.ipPayments; fi
-    - echo "Successfully executed"
+  stage: test
+  script: 
+   - wipCommits=`git log -1 --pretty=%B`;module="invoice"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.invoice; fi	
+   - wipCommits=`git log -1 --pretty=%B`;module="ippayments"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.ipPayments; fi 
+   - echo "Successfully executed"
