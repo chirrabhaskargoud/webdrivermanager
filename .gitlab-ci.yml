@@ -18,8 +18,8 @@ build:
     - mvn compile
 
 test:
-  stage: prepare
+  stage: test
   script: 
     - wipCommits=`git log -1 --pretty=%B`;module="invoice"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.invoice; fi	
-    - wipCommits=`git log -1 --pretty=%B`;module="ippayments"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.ippayments; fi
+    - wipCommits=`git log -1 --pretty=%B`;module="ippayments"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.ipPayments; fi
     - echo "Successfully executed"
