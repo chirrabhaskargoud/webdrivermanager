@@ -1,8 +1,8 @@
 image: markhobson/maven-chrome:jdk-8
 
 stages:
-  - build1
-  - test1
+  - build
+  - test
 
 variables:
  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
