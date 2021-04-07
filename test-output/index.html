@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>testng.xml</span>
+                    <span>invoice.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +102,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.eliasnogueira.wdm.GithubWDMPageTest2" class="method navigator-link" hash-for-method="checkDescription">checkDescription</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.eliasnogueira.wdm.GithubWDMPageTest" class="method navigator-link" hash-for-method="checkDescription">checkDescription</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.eliasnogueira.wdm.InvoicePDF" class="method navigator-link" hash-for-method="checkDescription">checkDescription</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -125,22 +120,7 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.eliasnogueira.wdm.GithubWDMPageTest2</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="checkDescription">
-                  </a> <!-- checkDescription -->
-                  <span class="method-name">checkDescription</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.eliasnogueira.wdm.GithubWDMPageTest</span>
+              <span class="class-name">com.eliasnogueira.wdm.InvoicePDF</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -155,7 +135,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/home/etg-bhaskar/Documents/GitLabWorkspace/webdrivermanager-pipeline-test-master/testng.xml</span>
+            <span class="header-content">/home/etg-bhaskar/Documents/GitLabWorkspace/webdrivermanager-pipeline-test-master/invoice.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -164,8 +144,7 @@
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.eliasnogueira.wdm.GithubWDMPageTest2&quot;/&gt;
-      &lt;class name=&quot;com.eliasnogueira.wdm.GithubWDMPageTest&quot;/&gt;
+      &lt;class name=&quot;com.eliasnogueira.wdm.InvoicePDF&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -179,7 +158,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (2 classes)</span>
+                <span class="test-name">Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -205,20 +184,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'checkDescription')
-data.setCell(0, 2, 'com.eliasnogueira.wdm.GithubWDMPageTest2')
-data.setCell(0, 3, 73);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'checkDescription')
-data.setCell(1, 2, 'com.eliasnogueira.wdm.GithubWDMPageTest')
-data.setCell(1, 3, 63);
+data.setCell(0, 2, 'com.eliasnogueira.wdm.InvoicePDF')
+data.setCell(0, 3, 66);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 136 ms</span>
+              <span class="suite-total-time">Total running time: 66 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -244,33 +219,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.eliasnogueira.wdm.GithubWDMPageTest2</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.eliasnogueira.wdm.InvoicePDF</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">webdrivermanagerSetup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkDescription</span>
-                <span class="method-start">6412 ms</span>
+                <span class="method-start">12773 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">quitBrowser</span>
-                <span class="method-start">6485 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.eliasnogueira.wdm.GithubWDMPageTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">webdrivermanagerSetup</span>
-                <span class="method-start">6606 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">checkDescription</span>
-                <span class="method-start">7884 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">quitBrowser</span>
-                <span class="method-start">7948 ms</span>
+                <span class="method-start">12840 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

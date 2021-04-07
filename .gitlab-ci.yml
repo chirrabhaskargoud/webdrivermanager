@@ -1,35 +1,25 @@
-image: ubuntu
+image: markhobson/maven-chrome:jdk-8
 
 stages:
-  - build 
-  - prepare 
+  - build 
+  - test 
 
 variables:
-  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
 
 cache:
-  paths:
-    - .m2/repository/
-    - target/
+  paths:
+    - .m2/repository/
+    - target/
 
 build:
-  stage: build
-  tags:
-    - zalenium
-  script:
-    - apt-get update
-    - apt install docker.io -y
-    - sudo docker run ubuntu
-    - docker pull markhobson/maven-chrome:jdk-8
-    - docker pull elgalu/selenium
-    - docker pull dosel/zalenium
-    - docker run --rm -ti --name zalenium -p 4444:4444 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/videos:/home/seluser/videos --privileged dosel/zalenium start
+  stage: build
+  script:
+    - mvn compile
 
-prepare1:
-  stage: prepare
-  tags:
-    - zalenium
-  script: 
-    - wipCommits=`git log -1 --pretty=%B`;module="invoice"; if [[ $wipCommits == $module ]]; then mvn clean test -Dsurefire.suiteXmlFiles=GithubWDMPageTest.xml; fi	
-    - wipCommits=`git log -1 --pretty=%B`;module="ippayments"; if [[ $wipCommits == $module ]]; then mvn clean test -Dsurefire.suiteXmlFiles=GithubWDMPageTest2.xml; fi
-    - echo "Successfully executed"
+test:
+  stage: prepare
+  script: 
+    - wipCommits=`git log -1 --pretty=%B`;module="invoice"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.invoice; fi	
+    - wipCommits=`git log -1 --pretty=%B`;module="ippayments"; if [[ $wipCommits == $module ]]; then mvn test -Dtest=com.eliasnogueira.wdm.ippayments; fi
+    - echo "Successfully executed"

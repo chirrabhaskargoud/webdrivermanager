@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-class GithubWDMPageTest {
+class InvoicePDF {
 
     private static WebDriver driver;
     private static final String URL = "https://github.com/bonigarcia/webdrivermanager";
@@ -30,7 +30,10 @@ class GithubWDMPageTest {
         chromeOpts.setHeadless(true);
         driver = new ChromeDriver(chromeOpts);
         driver.get(URL);
-        System.out.println("************************ GithubWDMPageTest Execution completed Successfully *************************************");
+        Thread.sleep(10000);
+      
+        System.out.println("********************** Page title is **********************"+driver.getTitle());
+        System.out.println("************************ Invoice PDF Test Execution completed Successfully *************************************");
       } catch (Exception e) {
         e.printStackTrace();
       }
