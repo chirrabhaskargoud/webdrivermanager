@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>invoice.xml</span>
+                    <span>ipPayments.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.eliasnogueira.wdm.InvoicePDF" class="method navigator-link" hash-for-method="checkDescription">checkDescription</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.eliasnogueira.wdm.SendSchedulePayments" class="method navigator-link" hash-for-method="checkDescription">checkDescription</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -120,7 +120,7 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.eliasnogueira.wdm.InvoicePDF</span>
+              <span class="class-name">com.eliasnogueira.wdm.SendSchedulePayments</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -135,7 +135,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/home/etg-bhaskar/Documents/GitLabWorkspace/webdrivermanager-pipeline-test-master/invoice.xml</span>
+            <span class="header-content">/home/etg-bhaskar/Documents/GitLabWorkspace/webdrivermanager-pipeline-test-master/ipPayments.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -144,7 +144,7 @@
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.eliasnogueira.wdm.InvoicePDF&quot;/&gt;
+      &lt;class name=&quot;com.eliasnogueira.wdm.SendSchedulePayments&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -187,13 +187,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'checkDescription')
-data.setCell(0, 2, 'com.eliasnogueira.wdm.InvoicePDF')
-data.setCell(0, 3, 66);
+data.setCell(0, 2, 'com.eliasnogueira.wdm.SendSchedulePayments')
+data.setCell(0, 3, 150);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 66 ms</span>
+              <span class="suite-total-time">Total running time: 150 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -219,18 +219,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.eliasnogueira.wdm.InvoicePDF</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.eliasnogueira.wdm.SendSchedulePayments</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">webdrivermanagerSetup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkDescription</span>
-                <span class="method-start">12773 ms</span>
+                <span class="method-start">18485 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">quitBrowser</span>
-                <span class="method-start">12840 ms</span>
+                <span class="method-start">18637 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
