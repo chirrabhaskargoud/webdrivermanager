@@ -22,4 +22,4 @@ test:
   script: 
    - wipCommits=`git log -1 --pretty=%B`;module="invoice"; if [[ $wipCommits == $module ]]; then mvn test -DsuiteXmlFile=invoice.xml; fi	
    - wipCommits=`git log -1 --pretty=%B`;module="ippayments"; if [[ $wipCommits == $module ]]; then mvn test -DsuiteXmlFile=ipPayments.xml; fi 
-   - echo "Successfully executed"
+   - echo "Successfully executed "
