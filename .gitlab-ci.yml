@@ -1,5 +1,25 @@
-demo_job_1:
-    tags:
-     - runner
-    script:
-     - echo "Hello world"
+image: markhobson/maven-chrome:jdk-8
+
+stages:
+  - build
+  - test
+
+variables:
+ MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+cache:
+  paths:
+   - .m2/repository/
+   - target/
+
+build:
+  stage: build
+  script:
+   - mvn compile
+
+test:
+  stage: test
+  script: 
+   - wipCommits=`git log -1 --pretty=%B`;module="invoice"; if [[ $wipCommits == $module ]]; then mvn test -DsuiteXmlFile=invoice.xml; fi	
+   - wipCommits=`git log -1 --pretty=%B`;module="ippayments"; if [[ $wipCommits == $module ]]; then mvn test -DsuiteXmlFile=ipPayments.xml; fi 
+   - echo "Successfully executed "
