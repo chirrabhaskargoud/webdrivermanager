@@ -17,7 +17,7 @@ build:
   script:
    - mvn compile
   tags:
-    - qa
+   - qa
 
 test:
   stage: test
